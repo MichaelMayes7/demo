@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/v1/")
+@RequestMapping("student6/api/v1/")
 public class VideoGameController {
 
     @Autowired

@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "VideoGame")
+@Table(name = "videogame")
 public class VideoGame {
 
     //MEM VARS
@@ -17,6 +17,10 @@ public class VideoGame {
     private String review;
 
     //CONSTRUCTOR
+    public VideoGame() {
+        super();
+    }
+
     public VideoGame(Long id, String name, String studio, String rating, String review) {
         this.id = id;
         this.name = name;
