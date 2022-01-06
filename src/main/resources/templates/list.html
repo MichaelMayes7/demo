@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Video Games I Love</title>
+    <link th:href = "@{main.css}" rel="stylesheet">
+</head>
+<body>
+    <h2>Video Games I Love</h2>
+    <table class = "listtable">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Studio</th>
+            <th>Rating</th>
+            <th>Review</th>
+<!--            <th>View</th>-->
+<!--            <th>Update</th>-->
+<!--            <th>Delete</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="VideoGame: ${videogames}">
+            <td th:text="${VideoGame.name}">...</td>
+            <td th:text="${VideoGame.studio}">...</td>
+            <td th:text="${VideoGame.rating}">...</td>
+            <td th:text="${VideoGame.review}">...</td>
+<!--            <td></td>-->
+<!--            <td></td>-->
+<!--            <td></td>-->
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

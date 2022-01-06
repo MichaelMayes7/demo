@@ -29,6 +29,7 @@ public class VideoGame {
         this.review = review;
     }
 
+
     //GETTERS AND SETTERS
     public Long getId() {
         return id;
