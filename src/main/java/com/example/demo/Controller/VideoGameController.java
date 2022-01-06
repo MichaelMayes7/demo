@@ -27,6 +27,21 @@ public class VideoGameController {
         return "list";
     }
 
+    @GetMapping("videogameform")
+    public String showForm(Model model) {
+        VideoGame videoGame = new VideoGame();
+        model.addAttribute("videogameform", videoGame);
+        model.addAttribute("activePage", "register");
+        return "videogameform";
+    }
+
+    @PostMapping("videogameform")
+    public String formPosted(@ModelAttribute("videoGame") VideoGame videoGame) {
+        System.out.println(videoGame.getName());
+        videoGameService.addVideoGame(videoGame);
+        return "videogame_success";
+    }
+
 //    @RequestMapping("videogames")
 //    public List<VideoGame> getVideoGames() {
 //        return videoGameService.findAll();

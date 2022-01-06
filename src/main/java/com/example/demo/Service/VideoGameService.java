@@ -30,4 +30,8 @@ public class VideoGameService {
     public void delete(VideoGame videoGame) {
         videoGameRepository.delete(videoGame);
     }
+
+    public void addVideoGame(VideoGame videoGame) {
+        videoGameRepository.save(videoGame);
+    }
 }
