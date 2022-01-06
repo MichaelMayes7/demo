@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Consoles I Have Known and Loved</title>
+  <link th:href = "@{main.css}" rel="stylesheet">
+</head>
+<body>
+<h2>Consoles I Have Known and Loved</h2>
+<table class = "listtable">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Company</th>
+    <th>Release Date</th>
+
+    <!--            <th>View</th>-->
+    <!--            <th>Update</th>-->
+    <!--            <th>Delete</th>-->
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="Console: ${consoles}">
+    <td th:text="${Console.name}">...</td>
+    <td th:text="${Console.manuCompany}">...</td>
+    <td th:text="${Console.releaseDate}">...</td>
+    <!--            <td></td>-->
+    <!--            <td></td>-->
+    <!--            <td></td>-->
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
