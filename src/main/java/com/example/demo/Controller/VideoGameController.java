@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.*;
 
@@ -17,29 +18,50 @@ public class VideoGameController {
     @Autowired
     private VideoGameService videoGameService;
 
+//    @GetMapping("list")
+//    String list(Model model) {
+//        model.addAttribute("videogames", Arrays.asList(
+//                new VideoGame(2L, "Hellblade: Senua's Saga", "Ninja Theory", "Mature", "Very Eerie with great combat and puzzles"),
+//                new VideoGame(3L, "Forza Horizon 5", "Turn 10 Studios", "Everyone", "Best Forza yet"),
+//                new VideoGame(4L, "Skyrim", "Bethesda", "Mature", "Easily the richest story in an RPG")
+//        ));
+//        return "list";
+//    }
+
+//    @GetMapping("videogameform")
+//    public String showForm(Model model) {
+//        VideoGame videoGame = new VideoGame();
+//        model.addAttribute("videogameform", videoGame);
+//        model.addAttribute("activePage", "register");
+//        return "videogameform";
+//    }
+//
+//    @PostMapping("videogameform")
+//    public String formPosted(@ModelAttribute("videoGame") VideoGame videoGame) {
+//        System.out.println(videoGame.getName());
+//        videoGameService.addVideoGame(videoGame);
+//        return "videogame_success";
+//    }
+
     @GetMapping("list")
-    String list(Model model) {
-        model.addAttribute("videogames", Arrays.asList(
-                new VideoGame(2L, "Hellblade: Senua's Saga", "Ninja Theory", "Mature", "Very Eerie with great combat and puzzles"),
-                new VideoGame(3L, "Forza Horizon 5", "Turn 10 Studios", "Everyone", "Best Forza yet"),
-                new VideoGame(4L, "Skyrim", "Bethesda", "Mature", "Easily the richest story in an RPG")
-        ));
-        return "list";
+    public ModelAndView getAllVideoGames() {
+        ModelAndView mav = new ModelAndView("list");
+        mav.addObject("videogames", videoGameService.findAll());
+        return mav;
     }
 
     @GetMapping("videogameform")
-    public String showForm(Model model) {
-        VideoGame videoGame = new VideoGame();
-        model.addAttribute("videogameform", videoGame);
-        model.addAttribute("activePage", "register");
-        return "videogameform";
+    public ModelAndView addVideoGameForm() {
+        ModelAndView mav = new ModelAndView("videogameform");
+        VideoGame newVideoGame = new VideoGame();
+        mav.addObject("videoGame", newVideoGame);
+        return mav;
     }
 
     @PostMapping("videogameform")
-    public String formPosted(@ModelAttribute("videoGame") VideoGame videoGame) {
-        System.out.println(videoGame.getName());
+    public String saveEmployee(@ModelAttribute VideoGame videoGame) {
         videoGameService.addVideoGame(videoGame);
-        return "videogame_success";
+        return "redirect:/list";
     }
 
 //    @RequestMapping("videogames")

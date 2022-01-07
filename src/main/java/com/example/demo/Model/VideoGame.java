@@ -1,8 +1,7 @@
 package com.example.demo.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "videogame")
@@ -69,5 +68,29 @@ public class VideoGame {
 
     public void setReview(String review) {
         this.review = review;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        VideoGame videoGame = (VideoGame) o;
+        return getId().equals(videoGame.getId()) && Objects.equals(getName(), videoGame.getName()) && Objects.equals(getStudio(), videoGame.getStudio()) && Objects.equals(getRating(), videoGame.getRating()) && Objects.equals(getReview(), videoGame.getReview());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getName(), getStudio(), getRating(), getReview());
+    }
+
+    @Override
+    public String toString() {
+        return "VideoGame{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", studio='" + studio + '\'' +
+                ", rating='" + rating + '\'' +
+                ", review='" + review + '\'' +
+                '}';
     }
 }

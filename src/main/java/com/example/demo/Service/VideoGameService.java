@@ -34,4 +34,5 @@ public class VideoGameService {
     public void addVideoGame(VideoGame videoGame) {
         videoGameRepository.save(videoGame);
     }
+
 }
