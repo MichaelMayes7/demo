@@ -37,7 +37,7 @@ public class ConsoleController {
     @PostMapping("consoleform")
     public String saveConsole(@ModelAttribute Console console) {
         consoleService.addConsole(console);
-        return "redirect:/list";
+        return "redirect:/consolelist";
     }
 
 //    @GetMapping("consolelist")
