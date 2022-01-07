@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href = "@{main.css}" rel="stylesheet">
+</head>
+<body>
+    <ul class="ulnav" th:fragment="navigation">
+        <li class="linav"><a class="linava" href="list">Video Games</a></li>
+        <li class="linav"><a class="linava" href="consolelist">Consoles</a></li>
+        <li class="linav"><a class="linava" href="videogameform">Add Game</a></li>
+        <li class="linav"><a class="linava" href="consoleform">Add Console</a></li>
+    </ul>
+</body>
+</html>

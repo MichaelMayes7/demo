@@ -6,10 +6,12 @@
     <link th:href = "@{main.css}" rel="stylesheet">
 </head>
 <body>
+    <div th:replace="~{fragments/navigation :: navigation}"></div>
     <h2>Video Games I Have Known and Loved</h2>
     <table class = "listtable">
         <thead>
         <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Studio</th>
             <th>Rating</th>
@@ -21,6 +23,7 @@
         </thead>
         <tbody>
         <tr th:each="VideoGame: ${videogames}">
+            <td th:text="${VideoGame.id}">...</td>
             <td th:text="${VideoGame.name}">...</td>
             <td th:text="${VideoGame.studio}">...</td>
             <td th:text="${VideoGame.rating}">...</td>

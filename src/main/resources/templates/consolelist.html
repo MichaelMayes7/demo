@@ -6,10 +6,12 @@
   <link th:href = "@{main.css}" rel="stylesheet">
 </head>
 <body>
+<div th:replace="~{fragments/navigation :: navigation}"></div>
 <h2>Consoles I Have Known and Loved</h2>
 <table class = "listtable">
   <thead>
   <tr>
+    <th>ID</th>
     <th>Name</th>
     <th>Company</th>
     <th>Release Date</th>
@@ -21,6 +23,7 @@
   </thead>
   <tbody>
   <tr th:each="Console: ${consoles}">
+    <td th:text="${Console.id}">...</td>
     <td th:text="${Console.name}">...</td>
     <td th:text="${Console.manuCompany}">...</td>
     <td th:text="${Console.releaseDate}">...</td>

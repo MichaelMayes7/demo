@@ -39,9 +39,9 @@ a:link, a:visited {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-
+  border-style: solid;
+  border-radius: 12px;
+  border-color: #2c3e50;
 }
 
 a:hover, a:active {
@@ -60,6 +60,9 @@ button {
     padding: 14px 25px;
     text-align: center;
     text-decoration: none;
+    border-style: solid;
+    border-radius: 12px;
+    border-color: #2c3e50;
 }
 
 button:hover, button:active {
@@ -69,14 +72,44 @@ button:hover, button:active {
 .buttons {
     margin-left:auto;
     margin-right:auto;
+    display: flex;
+    justify-content: center;
 }
 
 .buttons1 {
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .buttons2 {
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.ulnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #34495e;
+}
+
+.linav {
+  float: left;
+}
+
+.linava {
+  display: block;
+  color: #16a085;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.linava:hover {
+  background-color: #27ae60;
 }
