@@ -46,7 +46,7 @@ public class VideoGameController {
     @GetMapping("list")
     public ModelAndView getAllVideoGames() {
         ModelAndView mav = new ModelAndView("list");
-        mav.addObject("videogames", videoGameService.findAll());
+        mav.addObject("videogames", videoGameService.findAllVideoGames());
         return mav;
     }
 
@@ -59,7 +59,7 @@ public class VideoGameController {
     }
 
     @PostMapping("videogameform")
-    public String saveEmployee(@ModelAttribute VideoGame videoGame) {
+    public String saveVideoGame(@ModelAttribute VideoGame videoGame) {
         videoGameService.addVideoGame(videoGame);
         return "redirect:/list";
     }

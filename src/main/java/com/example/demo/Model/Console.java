@@ -5,12 +5,11 @@ import java.time.LocalDate;
 
 
 @Entity
-@Table(name = "Console")
+@Table(name = "Console6")
 public class Console {
 
     //MEM VARS
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String manuCompany;
@@ -22,6 +21,10 @@ public class Console {
         this.name = name;
         this.manuCompany = manuCompany;
         this.releaseDate = releaseDate;
+    }
+
+    public Console() {
+        super();
     }
 
     //GETTERS AND SETTERS

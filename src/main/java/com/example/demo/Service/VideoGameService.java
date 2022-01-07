@@ -35,4 +35,7 @@ public class VideoGameService {
         videoGameRepository.save(videoGame);
     }
 
+    public List<VideoGame> findAllVideoGames() {
+        return videoGameRepository.findAll();
+    }
 }

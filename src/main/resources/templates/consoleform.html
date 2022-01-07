@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Add Console</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href = "@{main.css}" rel="stylesheet">
+</head>
+<body>
+
+<div>
+
+    <h2>Add Console</h2>
+    <hr/>
+
+    <form method="POST" th:action="@{/consoleform}" th:object="${console}">
+
+        <input type="text" th:field="*{id}" placeholder="Enter Id" />
+
+        <input type="text" th:field="*{name}" placeholder="Enter Name" />
+
+        <input type="text" th:field="*{manuCompany}" placeholder="Enter Company" />
+
+        <input type="text" th:field="*{releaseDate}" placeholder="Enter Release Date" />
+
+        <button type="submit">Save</button>
+
+    </form>
+    <hr/>
+    <div class = buttons>
+        <a th:href="@{/list}">Back to list</a>
+    </div>
+</div>
+
+</body>
+</html>
